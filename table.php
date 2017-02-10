@@ -1,50 +1,48 @@
 <?php
-$color = '#369;';
-$red = 'background: '. $color .' color: white; font-weight: bold;';
+$color = '#369';
+$red = 'background: '. $color .'; color: white; font-weight: bold;';
 $all = 'width: 2.5em; text-align: right; padding-right: .3em;';
 
-function table($rows,$columns){
+function table($rows,$columns,$color=''){
 
     echo "<table style=\"border: 1px solid #369;\">";
+
+
+    if ('' == $color) $color = $GLOBALS['red'];
+    else $color = 'background: '. $color .'; color: white; font-weight: bold;';
     
-    for ($i=1; $i <$rows ; $i++) {
+    for ($i=1; $i <= $rows ; $i++) {
         echo "<tr>";
-        for ($j=1; $j <$columns ; $j++) {
+        for ($j=1; $j <= $columns ; $j++) {
             echo '<td style="' . $GLOBALS['all'];
-            echo ($i==1 || $j==1) ? $GLOBALS['red'] : '' ;
+            echo ($i==1 || $j==1) ? $color : '' ;
             echo '">' . $i*$j . "</td>";
         }
         echo "</tr>";
     }
     echo "</table>";
 }
-
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Таблица</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-<!-- Begin page content -->
 <div class="container">
     <div class="page-header">
-        <h1 class="page-title">Таблица</h1>
+        <h1 class="page-title">Таблица умножения</h1>
     </div>
-        <?php table(10,10); ?>
-        <?php table(7,10); ?>
-        <?php table(10,7); ?>
+    <form action="/index.php?page=table" method="POST">
+        <input type="number" name="columns" min="2" max="22" defaultvalue="11" value="13">
+        <input type="number" name="rows" min="2" max="22" defaultvalue="11" value="13">
+        <input type="color" name="color" defaultvalue="#369" value="369">
+        <button> show </button>
+    </form>
+    <h1><?= $color ?></h1>
+        <?php
+        $columns=11;
+        $rows   =11;
+        $color  ="#369";
+        if(isPost()) {
+            $columns = getRequestVariable('columns',10);
+            $rows = getRequestVariable('rows',10);
+            $color = getRequestVariable('color','#369');
+        }
+        table($columns,$rows,$color);
+        ?>
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">Copyright 2001 - <?= date('Y') ?></p>
-    </div>
-</footer>
-</body>
-</html>

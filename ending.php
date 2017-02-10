@@ -20,14 +20,3 @@ for ($i=0; $i < $total; $i++) {
 	echo " - в корзине {$i} товар" . ending($i) . "<br>";
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-	<title>Вывод окончаний товаров в корзине.</title>
-</head>
-<body>
-	
-</body>
-</html>
