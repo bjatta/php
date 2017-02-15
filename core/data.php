@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $menu = [
     ['href' => '/index.php?page=about', 'text' => 'обо мне'],
     ['href' => '/index.php?page=version', 'text' => 'версия php'],
@@ -25,4 +25,8 @@ if ($time_of_day > 6) {
     }
 }
 
-?>
+$color = '#336699';
+$red = 'background: '. $color .'; color: white; font-weight: bold;';
+$all = 'width: 2.5em; text-align: right; padding-right: .3em;';
+$columns=11;
+$rows   =11;

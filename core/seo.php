@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $str_test = ' - ';
 $str_test = isset($_GET['page']) ? $_GET['page'] : 'index';
