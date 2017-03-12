@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/vacation_dates.css">
+		<title>Расчёт компенсации трудового отпуска</title>
+</head>
+<body>
+	<section>
+	<h1>Расчёт компенсации трудового отпуска</h1>
+	<form action="#" onsubmit="return false;">
+		<input type="date" name="date1" value="2015-07-02">
+		<input type="date" name="date2" value="2016-05-23"><br>
+		<input type="number" name="date3" min="24" max="58" value="28"><br>
+		<input type="number" name="date4" min="0" max="370" value="0"><br><br>
+		<hr><br>
+		<button onclick="calc()"> расссчитать </button>
+	</form>
+	<div></div>
+	</section>
+	<script>
+		function calc(){
+			var date1 = document.querySelector('input[name="date1"]').value;
+			var date2 = document.querySelector('input[name="date2"]').value;
+			var date3 = document.querySelector('input[name="date3"]').value;
+			var date4 = document.querySelector('input[name="date4"]').value;
+			var daysDone = (Date.parse(date2)-Date.parse(date1))/(60*60*24*1000);
+			var monthesDone = Math.round(daysDone / 29.7);
+			document.querySelector('div').innerHTML = '<p>' + daysDone + ' дней. '
+				+ monthesDone + ' месяцев</p>'
+				+ (Math.round(date3/12*monthesDone) - parseInt(date4)) +' - Количество дней трудового отпуска';
+		}
+		calc();
+	</script>
+</body>
+</html>
