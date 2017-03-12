@@ -1,16 +1,30 @@
 * {
-	margin: 0.7em;
 	box-sizing: border-box;
 	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1.1em;
 	text-align: center;
+	border-radius: 0.5em;
+	padding-left: 0.2em;
 }
+
+body {padding: 0;}
 
 section {
 	border: 2px solid #369;
 	border-radius: 2em;
 	box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.75);
+	background-color: darkgray;
+	padding-left: 0;
 }
 
+input, button {
+	margin: 0.1em;
+	background-color: lightgray;
+}
+
+button {
+	padding-bottom: 0.2em;
+}
 form, p {
 	border: 2px solid #369;
 	padding: 0.5em;
@@ -19,17 +33,24 @@ form, p {
 }
 div {width: 90%;}
 
+span {
+	font-weight: bold;
+	font-size: 1.5em;
+	color: maroon;
+	border: 1px solid lightgray;
+	background-color: lightgray;
+	box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.75);	
+}
+
 @media (min-width: 992px) {
 	section {width: 42%;}
 }
 
 @media (min-width: 768px) and (max-width: 992px){
-	* {margin: 0.3em;}
 	section {width: 70%;}
 }
   
  @media (max-width: 768px) {
-	* {margin: 0;}
 	section {width: 100%;}
-	h1 {font-size: 0.7em;padding: 1em;width: 50%;}
+	h1 {padding: 0.2em;}
 }
