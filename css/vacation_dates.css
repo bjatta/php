@@ -16,7 +16,7 @@ body {
 }
 
 section {
-	border: 2px solid gray;
+	border: 2px solid black;
 	border-radius: 2em;
 	box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.75);
 	background-color: darkgray;
@@ -43,7 +43,7 @@ button {
 }
 
 form, div {
-	border: 2px solid gray;
+	border: 2px solid black;
 	padding: 0.5em;
 	margin: 0.5em;
 	border-radius: 1em;
