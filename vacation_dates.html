@@ -11,10 +11,10 @@
 	<section>
 	<h1>Расчёт компенсации трудового отпуска</h1>
 	<form action="#" onsubmit="return false;">
-		<input type="date" name="date1" value="2015-07-02">
-		<input type="date" name="date2" value="2016-05-23"><br>
-		<input type="number" name="date3" min="24" max="58" value="28">
-		<input type="number" name="date4" min="0" max="370" value="0"><br>
+		<input type="date" name="date1" value="2015-07-02" onchange="calc()">
+		<input type="date" name="date2" value="2016-05-23" onchange="calc()"><br>
+		<input type="number" name="date3" min="24" max="58" value="28" onchange="calc()">
+		<input type="number" name="date4" min="0" max="370" value="0" onchange="calc()"><br>
 		<button onclick="calc()">&nbsp;рассчёт&nbsp;</button>
 	</form>
 	<div></div>
@@ -27,10 +27,10 @@
 			var date4 = document.querySelector('input[name="date4"]').value;
 			var daysDone = (Date.parse(date2)-Date.parse(date1))/(60*60*24*1000);
 			var monthesDone = Math.round(daysDone / 29.7);
-			document.querySelector('div').innerHTML = '<p>' + daysDone + ' дней. '
-				+ monthesDone + ' месяцев</p>'
+			document.querySelector('section div').innerHTML = '<p>' + daysDone + ' дн. '
+				+ monthesDone + ' мес.</p>'
 				+ 'Количество дней трудового отпуска: <span>' 
-				+ (Math.round(date3/12*monthesDone) - parseInt(date4) +'&nbsp;</span><br>&nbsp;');
+				+ (Math.round(date3/12*monthesDone) - parseInt(date4) +'&nbsp;</span>');
 		}
 		calc();
 	</script>

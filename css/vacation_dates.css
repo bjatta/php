@@ -25,13 +25,13 @@ input, button {
 button {
 	padding-bottom: 0.2em;
 }
-form, p {
+form, div {
 	border: 2px solid #369;
 	padding: 0.5em;
 	margin: 0.5em;
 	border-radius: 1em;
 }
-div {width: 90%;}
+
 
 span {
 	font-weight: bold;
@@ -52,5 +52,8 @@ span {
   
  @media (max-width: 768px) {
 	section {width: 100%;}
-	h1 {padding: 0.2em;}
+	h1 {padding: 0.2em; font-size: 0.8em; width: 90%;margin: 0.2em;}
+	p {font-size: 0.5em;margin: 0.2em;color: maroon;font-weight: bold;}
+	form, div {padding: 0em; margin: 0.3em;}
+	div {font-size: 1em;}
 }
